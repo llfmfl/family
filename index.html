@@ -18,7 +18,7 @@ fetch("https://maianhedu.softether.net/cloudflare/api8082.php")
 
     if (data.status === "ok") {
 
-        window.location.href = data.url;
+        window.location.replace(data.url);
 
     } else {
 
