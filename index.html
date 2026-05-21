@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>Opening Family Tree...</title>
+</head>
+
+<body>
+
+<h2>Opening Family Tree...</h2>
+
+<script>
+
+fetch("http://maianhedu.v6.softether.net/api8082.php")
+.then(r => r.json())
+.then(data => {
+
+    if (data.status === "ok") {
+
+        window.location.href = data.url;
+
+    } else {
+
+        document.body.innerHTML =
+            "<h3>Tunnel chưa sẵn sàng</h3>";
+    }
+
+})
+.catch(err => {
+
+    document.body.innerHTML =
+        "<h3>Lỗi kết nối backend</h3>";
+
+});
+
+</script>
+
+</body>
+</html>
